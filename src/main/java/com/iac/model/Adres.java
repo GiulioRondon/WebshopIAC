@@ -13,4 +13,36 @@ public class Adres {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String straat, huisnummer, postcode, woonplaats;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getStraat() {
+		return straat;
+	}
+	public void setStraat(String straat) {
+		this.straat = straat;
+	}
+	public String getHuisnummer() {
+		return huisnummer;
+	}
+	public void setHuisnummer(String huisnummer) {
+		this.huisnummer = huisnummer;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	public String getWoonplaats() {
+		return woonplaats;
+	}
+	public void setWoonplaats(String woonplaats) {
+		this.woonplaats = woonplaats;
+	}
+    
+    
 }

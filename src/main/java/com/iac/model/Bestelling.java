@@ -34,4 +34,46 @@ public class Bestelling {
 
     @OneToMany(mappedBy = "bestellingID")
     private List<Bestellingsregel> bestellingsregels = new ArrayList<>();
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Date getBestelDatum() {
+		return bestelDatum;
+	}
+
+	public void setBestelDatum(Date bestelDatum) {
+		this.bestelDatum = bestelDatum;
+	}
+
+	public Account getAccountID() {
+		return accountID;
+	}
+
+	public void setAccountID(Account accountID) {
+		this.accountID = accountID;
+	}
+
+	public Adres getAfleverAdres() {
+		return afleverAdres;
+	}
+
+	public void setAfleverAdres(Adres afleverAdres) {
+		this.afleverAdres = afleverAdres;
+	}
+
+	public List<Bestellingsregel> getBestellingsregels() {
+		return bestellingsregels;
+	}
+
+	public void setBestellingsregels(List<Bestellingsregel> bestellingsregels) {
+		this.bestellingsregels = bestellingsregels;
+	}
+    
+    
 }

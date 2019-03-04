@@ -31,4 +31,62 @@ public class Account {
 
     @OneToMany(mappedBy = "accountID")
     private List<Bestelling> bestellingen;
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public String getGebruikersnaam() {
+		return gebruikersnaam;
+	}
+
+	public void setGebruikersnaam(String gebruikersnaam) {
+		this.gebruikersnaam = gebruikersnaam;
+	}
+
+	public String getWachtwoord() {
+		return wachtwoord;
+	}
+
+	public void setWachtwoord(String wachtwoord) {
+		this.wachtwoord = wachtwoord;
+	}
+
+	public String getIsActief() {
+		return isActief;
+	}
+
+	public void setIsActief(String isActief) {
+		this.isActief = isActief;
+	}
+
+	public Date getRegistratieDatum() {
+		return registratieDatum;
+	}
+
+	public void setRegistratieDatum(Date registratieDatum) {
+		this.registratieDatum = registratieDatum;
+	}
+
+	public Adres getPersoonAdres() {
+		return persoonAdres;
+	}
+
+	public void setPersoonAdres(Adres persoonAdres) {
+		this.persoonAdres = persoonAdres;
+	}
+
+	public List<Bestelling> getBestellingen() {
+		return bestellingen;
+	}
+
+	public void setBestellingen(List<Bestelling> bestellingen) {
+		this.bestellingen = bestellingen;
+	}
+    
+    
 }
