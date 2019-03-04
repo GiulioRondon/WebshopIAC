@@ -1,10 +1,11 @@
-package com.example.demo;
+package com.iac.controller;
 
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.model.Klant;
+import com.iac.model.Klant;
+import com.iac.service.KlantService;
 
 import java.util.List;
 

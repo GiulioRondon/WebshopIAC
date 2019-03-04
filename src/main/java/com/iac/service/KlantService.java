@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.iac.service;
 
 import java.util.List;
 
-import com.example.demo.model.Klant;
+import com.iac.model.Klant;
 
 public interface KlantService {
     List<Klant> getAllKlanten();

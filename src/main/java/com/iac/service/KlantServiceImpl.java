@@ -1,8 +1,9 @@
-package com.example.demo;
+package com.iac.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Klant;
+import com.iac.model.Klant;
+import com.iac.repository.KlantRepo;
 
 import java.util.List;
 

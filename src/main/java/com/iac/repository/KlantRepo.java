@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.iac.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.model.Klant;
+import com.iac.model.Klant;
 
 public interface KlantRepo extends JpaRepository<Klant, Long>{
 }
