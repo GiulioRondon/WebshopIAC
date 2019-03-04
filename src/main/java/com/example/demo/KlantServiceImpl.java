@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.stereotype.Service;
 
-import com.example.model.Klant;
+import com.example.demo.model.Klant;
 
 import java.util.List;
 

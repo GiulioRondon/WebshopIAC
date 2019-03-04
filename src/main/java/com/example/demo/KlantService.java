@@ -2,7 +2,7 @@ package com.example.demo;
 
 import java.util.List;
 
-import com.example.model.Klant;
+import com.example.demo.model.Klant;
 
 public interface KlantService {
     List<Klant> getAllKlanten();

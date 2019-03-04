@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.model.Klant;
+import com.example.demo.model.Klant;
 
 public interface KlantRepo extends JpaRepository<Klant, Long>{
 }

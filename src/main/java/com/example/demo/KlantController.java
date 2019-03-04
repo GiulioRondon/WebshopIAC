@@ -4,7 +4,7 @@ package com.example.demo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.model.Klant;
+import com.example.demo.model.Klant;
 
 import java.util.List;
 
@@ -30,8 +30,6 @@ public class KlantController {
     @PostMapping
     public void saveKlant(@RequestBody Klant klant){
         System.out.println(klant == null);
-        System.out.println(klant.getAchternaam());
-        System.out.println(klant.getNaam());
         klantService.saveKlant(klant);
 
     }
