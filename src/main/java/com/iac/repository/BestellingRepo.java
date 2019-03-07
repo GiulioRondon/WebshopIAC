@@ -1,5 +1,8 @@
 package com.iac.repository;
 
-public @interface BestellingRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.iac.model.Bestelling;
+
+public interface BestellingRepo extends JpaRepository<Bestelling,Long>{
 
 }
