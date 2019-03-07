@@ -6,10 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Bestellingsregel;
 import com.iac.service.BestellingsregelService;
 
+@RestController
+@RequestMapping("/bestellingsregels")
 public class BestellingsregelController {
     private final BestellingsregelService bestellingsregelService;
     
