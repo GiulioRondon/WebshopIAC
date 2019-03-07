@@ -26,4 +26,46 @@ public class Bestellingsregel {
     @OneToOne
     @JoinColumn(name = "product_id")
     private Product productID;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getAantal() {
+		return aantal;
+	}
+
+	public void setAantal(int aantal) {
+		this.aantal = aantal;
+	}
+
+	public double getPrijs() {
+		return prijs;
+	}
+
+	public void setPrijs(double prijs) {
+		this.prijs = prijs;
+	}
+
+	public Bestelling getBestellingID() {
+		return bestellingID;
+	}
+
+	public void setBestellingID(Bestelling bestellingID) {
+		this.bestellingID = bestellingID;
+	}
+
+	public Product getProductID() {
+		return productID;
+	}
+
+	public void setProductID(Product productID) {
+		this.productID = productID;
+	}
+    
+    
 }

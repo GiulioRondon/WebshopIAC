@@ -32,8 +32,5 @@ public class KlantController {
     public void saveKlant(@RequestBody Klant klant){
         System.out.println(klant == null);
         klantService.saveKlant(klant);
-
     }
-
-
 }

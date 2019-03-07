@@ -27,4 +27,54 @@ public class Product {
 
     @OneToMany(mappedBy= "productID")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
+    
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "product_categories",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "categories_id")}
+    )
+    private List<Categorie> categories = new ArrayList<>();
+
+	public long getProductID() {
+		return productID;
+	}
+
+	public void setProductID(long productID) {
+		this.productID = productID;
+	}
+
+	public String getNaam() {
+		return naam;
+	}
+
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+
+	public String getOmschrijving() {
+		return omschrijving;
+	}
+
+	public void setOmschrijving(String omschrijving) {
+		this.omschrijving = omschrijving;
+	}
+
+	public double getPrijs() {
+		return prijs;
+	}
+
+	public void setPrijs(double prijs) {
+		this.prijs = prijs;
+	}
+
+	public List<Aanbieding> getAanbiedingen() {
+		return aanbiedingen;
+	}
+
+	public void setAanbiedingen(List<Aanbieding> aanbiedingen) {
+		this.aanbiedingen = aanbiedingen;
+	}
+    
+    
 }

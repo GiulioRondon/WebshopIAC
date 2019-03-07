@@ -1,5 +1,35 @@
 package com.iac.controller;
 
-public class ProductController {
+import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.iac.model.Product;
+import com.iac.service.ProductService;
+
+public class ProductController {
+    private final ProductService productService;
+    
+    public ProductController(ProductService productservice) {
+    	this.productService = productservice;
+    }
+
+    @GetMapping
+    public ResponseEntity getProducten(){
+        List<Product> producten = productService.getAllProducten();
+        if (Producten == null) {
+            return ResponseEntity.status(409).build();
+        }
+
+        return ResponseEntity.status(200).body(producten);
+    }
+
+    @PostMapping
+    public void saveProduct(@RequestBody Product product){
+        System.out.println(product == null);
+        ProductService.saveProduct(product);
+    }
 }

@@ -22,7 +22,7 @@ public class BestellingsregelServiceImpl implements BestellingsregelService{
 	}
 
 	@Override
-	public List<Bestellingsregel> getAllBestellingsregel() {
+	public List<Bestellingsregel> getAllBestellingsregels() {
 		return bestellingsregelRepo.findAll();
 	}
 }

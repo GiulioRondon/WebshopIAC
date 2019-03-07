@@ -24,5 +24,36 @@ public class Aanbieding {
     @JoinColumn(name = "product_id")
     @OneToOne
     private Product productID;
+    
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
+	public double getPrijs() {
+		return prijs;
+	}
+	public void setPrijs(double prijs) {
+		this.prijs = prijs;
+	}
+	public Date getBeginDatum() {
+		return beginDatum;
+	}
+	public void setBeginDatum(Date beginDatum) {
+		this.beginDatum = beginDatum;
+	}
+	public Date getEindDatum() {
+		return eindDatum;
+	}
+	public void setEindDatum(Date eindDatum) {
+		this.eindDatum = eindDatum;
+	}
+	public Product getProductID() {
+		return productID;
+	}
+	public void setProductID(Product productID) {
+		this.productID = productID;
+	}
 }
 
