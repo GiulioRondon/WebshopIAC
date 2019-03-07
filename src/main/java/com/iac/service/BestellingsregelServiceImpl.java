@@ -9,6 +9,7 @@ import com.iac.repository.BestellingsregelRepo;
 
 @Service
 public class BestellingsregelServiceImpl implements BestellingsregelService{
+	
 	public final BestellingsregelRepo bestellingsregelRepo;
 	
 	public BestellingsregelServiceImpl(BestellingsregelRepo bestellingsregelRepo) {
@@ -16,12 +17,12 @@ public class BestellingsregelServiceImpl implements BestellingsregelService{
 	}
 	
 	@Override
-	public List<Bestellingsregel> getAllBestellingsregels(Bestellingsregel bestellingsRegel){
-		bestellingsregelRepo.findAll();
-	}
-	
-	@Override
 	public void saveBestellingsregel(Bestellingsregel bestellingsRegel) {
 		bestellingsregelRepo.save(bestellingsRegel);
+	}
+
+	@Override
+	public List<Bestellingsregel> getAllBestellingsregels() {
+		return bestellingsregelRepo.findAll();
 	}
 }

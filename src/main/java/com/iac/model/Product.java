@@ -27,6 +27,14 @@ public class Product {
 
     @OneToMany(mappedBy= "productID")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
+    
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "product_categories",
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name = "categories_id")}
+    )
+    private List<Categorie> categories = new ArrayList<>();
 
 	public long getProductID() {
 		return productID;

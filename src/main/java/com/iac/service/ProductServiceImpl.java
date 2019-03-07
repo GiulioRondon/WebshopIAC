@@ -9,15 +9,16 @@ import com.iac.repository.ProductRepo;
 
 @Service
 public class ProductServiceImpl implements ProductService{
-	public final ProductRepo bestellingsregelRepo;
+	
+	public final ProductRepo productRepo;
 	
 	public ProductServiceImpl(ProductRepo productRepo) {
 		this.productRepo = productRepo;
 	}
 	
 	@Override
-	public List<Product> getAllProducten(Product product){
-		productRepo.findAll();
+	public List<Product> getAllProducten(){
+		return productRepo.findAll();
 	}
 	
 	@Override
