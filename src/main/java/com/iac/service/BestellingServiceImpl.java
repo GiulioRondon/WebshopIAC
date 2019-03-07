@@ -12,7 +12,17 @@ public class BestellingServiceImpl implements BestellingService{
 	public final BestellingRepo bestellingRepo;
 	
 	public BestellingServiceImpl(BestellingRepo bestellingRepo) {
-		this.bestellingRepo = bestellin
+		this.bestellingRepo = bestellingRepo;
+	}
+	
+	@Override
+	public List<Bestelling> getAllBestellingen(){
+		return bestellingRepo.findAll();
+	}
+	
+	@Override 
+	public void saveBestelling(Bestelling bestelling) {
+		bestellingRepo.save(bestelling);
 	}
 
 }
