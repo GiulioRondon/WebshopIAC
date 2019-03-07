@@ -30,6 +30,6 @@ public class BestellingController {
     @PostMapping
     public void saveBestelling(@RequestBody Bestelling bestelling){
         System.out.println(bestelling == null);
-        BestellingService.saveBestelling(bestelling);
+        bestellingService.saveBestelling(bestelling);
     }
 }

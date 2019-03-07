@@ -20,7 +20,7 @@ public class ProductController {
     @GetMapping
     public ResponseEntity getProducten(){
         List<Product> producten = productService.getAllProducten();
-        if (Producten == null) {
+        if (producten == null) {
             return ResponseEntity.status(409).build();
         }
 
@@ -30,6 +30,6 @@ public class ProductController {
     @PostMapping
     public void saveProduct(@RequestBody Product product){
         System.out.println(product == null);
-        ProductService.saveProduct(product);
+        productService.saveProduct(product);
     }
 }

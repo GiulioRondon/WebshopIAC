@@ -19,17 +19,17 @@ public class BestellingsregelController {
 
     @GetMapping
     public ResponseEntity getBestellingsregelen(){
-        List<Bestellingsregel> bestellingsregelen = bestellingsregelService.getAllBestellingsregelen();
-        if (bestellingsregelen == null) {
+        List<Bestellingsregel> bestellingsregels = bestellingsregelService.getAllBestellingsregels();
+        if (bestellingsregels == null) {
             return ResponseEntity.status(409).build();
         }
 
-        return ResponseEntity.status(200).body(bestellingsregelen);
+        return ResponseEntity.status(200).body(bestellingsregels);
     }
 
     @PostMapping
     public void saveBestellingsregel(@RequestBody Bestellingsregel bestellingsregel){
         System.out.println(bestellingsregel == null);
-        BestellingsregelService.saveBestellingsregel(bestellingsregel);
+        bestellingsregelService.saveBestellingsregel(bestellingsregel);
     }
 }
