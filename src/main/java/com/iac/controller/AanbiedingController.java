@@ -23,7 +23,7 @@ public class AanbiedingController {
     }
 
     @GetMapping
-    public ResponseEntity getKlanten(){
+    public ResponseEntity getAanbiedingen(){
         List<Aanbieding> aanbiedingen = aanbiedingService.getAlleAanbiedingen();
         if (aanbiedingen == null) {
             return ResponseEntity.status(409).build();
@@ -33,7 +33,7 @@ public class AanbiedingController {
     }
 
     @PostMapping
-    public void saveKlant(@RequestBody Aanbieding aanbieding){
+    public void saveAanbieding(@RequestBody Aanbieding aanbieding){
         System.out.println(aanbieding == null);
         aanbiedingService.saveAanbieding(aanbieding);;
     }
