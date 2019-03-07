@@ -130,6 +130,7 @@
 
 .decription{
     margin-top: 40px;
+    margin-bottom: 90px;
 }
 
 .decription h2{
@@ -158,7 +159,18 @@
     font-size: 17px;
 }
 
+.backtwo{
+  margin-top: 20px;
+}
 
+.backtwo a{
+  text-decoration: none;
+  font-family: 'HTOWERT';
+  text-transform: uppercase;
+  color: #B8BC5D;
+}
+
+/* select size 
 .collapsible {
     background-color: #eee;
     color: #444;
@@ -171,13 +183,14 @@
     font-size: 15px;
     font-family: 'HTOWERT';
     text-transform: uppercase;
-}
 
+}
 
 .active, .collapsible:hover {
     background-color: #ccc;
 }
 
+*/
 .content {
     padding: 0 18px;
     display: none;
@@ -305,6 +318,27 @@
     text-align: justify;
     width: 85px;
     float: right;
+    margin-right: 30px;
+}
+
+.cart img{
+    height: 25px;
+    width: 25px;
+    float: right;
+    display: block;
+    margin: 5px 28px;
+}
+
+.cart p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 15px;
+}
+.cart{
+    text-align: justify;
+    width: 85px;
+    float: right;
 }
 
 .container label{
@@ -312,11 +346,15 @@
     text-transform: uppercase;
     color: #B8BC5D;
     font-size: 30px;
-    width: 50%
+    width: 100%
+}
+
+.container{
+  width: 60%;
 }
 
 .form{
-    margin-left: 520px;
+    margin-left: 450px;
     margin-top: 150px;
 }
 
@@ -334,4 +372,366 @@ input[type=text], input[type=password] {
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+}
+
+/*Styling for sign up and cancel buttons on Account.html*/
+button {
+  background-color: #B8BC5D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin-right: 10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #B8BC5D;
+}
+
+.cancel, .signup {
+  float: left;
+  width: 30%;
+}
+
+.productbuying h2{
+  margin-left: 630px;
+  margin-top: 30px;
+}
+
+.productsbuying table{
+  border-style: dashed;
+}
+
+@media only screen and (max-width: 1441px) {
+  #experience{
+    margin-top: 150px;
+    margin-left: 500px;
+    padding:0 15px 0 15px;
+}
+
+.midden{
+    text-align: center;
+}
+
+.products{
+    margin-top: 430px;
+    margin-left: 30px;
+    margin-bottom: 90px;
+    margin-right: 10000000px;
+}
+
+.products span{
+    margin-right: 25px;
+}
+
+.products span img{
+    height: 400px;
+    width: 400px;
+    margin-bottom: 25px;
+}
+
+.products span :hover{
+    transform:scale(1.1,1.1);
+}
+
+.logoimg{
+    margin-left: 130px;
+    height: 50px;
+    width: 50px;
+}
+
+.dropdown{
+    margin-left: 60px;
+}
+
+/*css for zoom*/
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 60px;
+    overflow: hidden;
+}
+
+.img-zoom-container img{
+    height: 250px;
+    width: 250px;
+    float: left;
+    margin-right: 50px;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  width: 70px;
+  height: 70px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.decription{
+    margin-top: 40px;
+    margin-bottom: 90px;
+}
+
+.decription h2{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    margin-left: 60px;
+    font-size: 25px;
+}
+
+.decription p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    margin-left: 60px;
+    font-size: 25px;
+    color: grey;
+}
+
+.back{
+    margin-top: 260px;
+    margin-left: 30px;
+}
+
+.back a{
+    text-decoration: none;
+    color: grey;
+    font-size: 17px;
+}
+
+.backtwo{
+  margin-top: 20px;
+}
+
+.backtwo a{
+  text-decoration: none;
+  font-family: 'HTOWERT';
+  text-transform: uppercase;
+  color: #B8BC5D;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    width: 40%;
+    margin-left: 220px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+}
+
+.content p:hover {
+   font-size: 20px;
+}
+
+/*menu*/
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*footer*/
+
+#page-container {
+  position: relative;
+  min-height: 20vh;
+  background-color: #F6F5F5;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  overflow: hidden;
+}
+
+#content-wrap p{
+    margin-left: 30px;
+}
+
+.lol{
+    width: 150px;
+    float: left;
+}
+
+.contact{
+    float: right;
+    overflow: hidden;
+    margin-right: 30px;
+    width: 200px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+/*styling for account button*/
+.account img{
+    height: 25px;
+    width: 25px;
+    float: left;
+    display: block;
+    margin: 5px 28px;
+}
+
+.account p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 15px;
+}
+
+.account{
+    text-align: justify;
+    width: 85px;
+    float: left;
+    margin-left: 30px;
+}
+
+.cart img{
+    height: 25px;
+    width: 25px;
+    float: left;
+    display: block;
+    margin: 5px 28px;
+}
+
+.cart p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 15px;
+}
+.cart{
+    text-align: justify;
+    width: 85px;
+    float: left;
+}
+
+.container label{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 30px;
+    width: 100%
+}
+
+.container{
+  width: 60%;
+}
+
+.form{
+    margin-left: 450px;
+    margin-top: 150px;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*Styling for sign up and cancel buttons on Account.html*/
+button {
+  background-color: #B8BC5D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin-right: 10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #B8BC5D;
+}
+
+.cancel, .signup {
+  float: left;
+  width: 30%;
 }
