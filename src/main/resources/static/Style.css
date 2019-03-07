@@ -1,0 +1,337 @@
+@font-face{
+    font-family: 'HTOWERT';
+    src: url('HTOWERT.ttf') format('truetype');
+}
+
+.welcome-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow: hidden;
+}
+
+.welcome-section .content-wrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.welcome-section .content-wrap .fly-in-text {
+    list-style: none;
+}
+.welcome-section .content-wrap .fly-in-text li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 5em;
+    color: black;
+    opacity: 1;
+    transition: all 2s ease;
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+}
+.welcome-section .content-wrap .fly-in-text li:last-child {
+    margin-right: 0;
+}
+.welcome-section .content-wrap .enter-button {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #D4AF37;
+    opacity: 1;
+    transition: all 1s ease 2s;
+ }
+            
+.welcome-section.content-hidden .content-wrap .fly-in-text li { opacity: 0; }
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) { transform: translate3d(-100px, 0, 0); }
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(2) { transform: translate3d(100px, 0, 0); }
+.welcome-section.content-hidden .content-wrap .enter-button { opacity: 0; transform: translate3d(0, -30px, 0); }
+            
+@media (min-width: 500px) {
+    .welcome-section .content-wrap .fly-in-text li { font-size: 10em; }
+    .welcome-section .content-wrap .enter-button { font-size: 1.5em; }
+}
+
+
+#experience{
+    margin-top: 150px;
+    margin-left: 500px;
+    padding:0 15px 0 15px;
+}
+
+.midden{
+    text-align: center;
+}
+
+.products{
+    margin-top: 330px;
+    margin-left: 140px;
+    margin-bottom: 90px;
+}
+
+.products span{
+    margin-right: 25px;
+}
+
+.products span img{
+    height: 400px;
+    width: 400px;
+}
+
+.products span :hover{
+    transform:scale(1.1,1.1);
+}
+
+.logoimg{
+    margin-left: 570px;
+    height: 50px;
+    width: 50px;
+}
+
+.dropdown{
+    margin-left: 60px;
+}
+
+/*css for zoom*/
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 220px;
+    overflow: hidden;
+}
+
+.img-zoom-container img{
+    height: 500px;
+    width: 500px;
+    float: left;
+    margin-right: 50px;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  width: 70px;
+  height: 70px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.decription{
+    margin-top: 40px;
+}
+
+.decription h2{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    margin-left: 220px;
+    font-size: 25px;
+}
+
+.decription p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    margin-left: 220px;
+    font-size: 25px;
+    color: grey;
+}
+
+.back{
+    margin-top: 260px;
+    margin-left: 30px;
+}
+
+.back a{
+    text-decoration: none;
+    color: grey;
+    font-size: 17px;
+}
+
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 40%;
+    border: none;
+    margin-left: 220px;
+    outline: none;
+    font-size: 15px;
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+}
+
+
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    width: 40%;
+    margin-left: 220px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+}
+
+.content p:hover {
+   font-size: 20px;
+}
+
+/*menu*/
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*footer*/
+
+#page-container {
+  position: relative;
+  min-height: 20vh;
+  background-color: #F6F5F5;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+  overflow: hidden;
+}
+
+#content-wrap p{
+    margin-left: 30px;
+}
+
+.lol{
+    width: 400px;
+    float: left;
+}
+
+.contact{
+    float: right;
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+/*styling for account button*/
+.account img{
+    height: 25px;
+    width: 25px;
+    float: right;
+    display: block;
+    margin: 5px 28px;
+}
+
+.account p{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 15px;
+}
+
+.account{
+    text-align: justify;
+    width: 85px;
+    float: right;
+}
+
+.container label{
+    font-family: 'HTOWERT';
+    text-transform: uppercase;
+    color: #B8BC5D;
+    font-size: 30px;
+    width: 50%
+}
+
+.form{
+    margin-left: 520px;
+    margin-top: 150px;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
