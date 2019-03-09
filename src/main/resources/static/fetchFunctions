@@ -1,8 +1,0 @@
-function getProducten() {
-	console.log("Requesting");
-	fetch("https://ipapi.co/json/")
-    .then(response => response.json())
-    .then(function(myJson) {
-	 	showWeather(myJson.latitude, myJson.longitude,myJson.city);
- })
-}
