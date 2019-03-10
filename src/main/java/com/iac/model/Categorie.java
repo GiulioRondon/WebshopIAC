@@ -20,7 +20,7 @@ public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "categorie_id")
-    private long categorieID;
+    private int categorieID;
     private String naam, omschrijving;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
