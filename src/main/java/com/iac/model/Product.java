@@ -25,8 +25,17 @@ public class Product {
 
     private String naam, omschrijving;
     private double prijs;
+    private String afbeelding;
 
-    @OneToMany(mappedBy= "productID")
+    public String getAfbeelding() {
+		return afbeelding;
+	}
+
+	public void setAfbeelding(String afbeelding) {
+		this.afbeelding = afbeelding;
+	}
+
+	@OneToMany(mappedBy= "productID")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
     
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)

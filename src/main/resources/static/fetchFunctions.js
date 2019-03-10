@@ -5,7 +5,7 @@ function getProducten() {
     		document.getElementById("products").innerHTML = "";
             for (var i = 0; i < jsonArray.length; i++)
             {
-            	document.getElementById("products").innerHTML += "<a href='Shirtone.html'><span class='explain'><p>"+jsonArray[i].naam+"</p><img src='one.jpeg' alt='one'></span></a>"
+            	document.getElementById("products").innerHTML += "<a href='Shirtone.html'><span class='explain'><img src='"+jsonArray[i].afbeelding+"' alt='"+jsonArray[i].afbeelding+"' width='400px'></span></a>"
     			console.log(jsonArray[i].naam);
             }
  })
