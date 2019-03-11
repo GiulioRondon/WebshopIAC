@@ -2,17 +2,15 @@ package com.iac.repository;
 
 import java.util.List;
 
+import org.hibernate.annotations.NamedQuery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.iac.model.Product;
 
+@Repository
 public interface ProductRepo extends JpaRepository<Product, Long>{
-
-	@Query(	"SELECT product.* FROM "
-			+ "product join product_categories ON product.productid = product_categories.product_id "
-			+ "JOIN categorie ON categorie.categorieid = product_categories.categories_id "
-			+ "WHERE categorie.categorieid = :categorie_id")
-	public List<Product> findByCategorie(@Param("categorie_id") int categorieID);
+	
 }

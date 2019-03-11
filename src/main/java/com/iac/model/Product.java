@@ -15,6 +15,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQuery;
+import org.springframework.data.repository.query.Param;
+
 @Entity
 @Table(name = "product")
 public class Product {
@@ -44,7 +47,6 @@ public class Product {
             joinColumns = {@JoinColumn(name = "product_id")},
             inverseJoinColumns = {@JoinColumn(name = "categories_id")}
     )
-    private List<Categorie> categories = new ArrayList<>();
 
 	public long getProductID() {
 		return productID;
