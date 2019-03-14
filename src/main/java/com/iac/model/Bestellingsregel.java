@@ -14,7 +14,7 @@ public class Bestellingsregel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "bestellingsregel_id")
-    private int id;
+    private long id;
 
     private int aantal;
     private double prijs;
@@ -27,11 +27,11 @@ public class Bestellingsregel {
     @JoinColumn(name = "product_id")
     private Product productID;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

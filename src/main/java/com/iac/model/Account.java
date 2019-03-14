@@ -20,7 +20,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "account_id")
-    private int ID;
+    private long ID;
 
     private String gebruikersnaam, wachtwoord, isActief;
     private Date registratieDatum;
@@ -32,11 +32,11 @@ public class Account {
     @OneToMany(mappedBy = "accountID")
     private List<Bestelling> bestellingen;
 
-	public int getID() {
+	public long getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
+	public void setID(long iD) {
 		ID = iD;
 	}
 

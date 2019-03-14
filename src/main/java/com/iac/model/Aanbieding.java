@@ -16,7 +16,7 @@ public class Aanbieding {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "aanbieding_id")
-    private int ID;
+    private long ID;
 
     private double prijs;
     private Date beginDatum;
@@ -25,10 +25,10 @@ public class Aanbieding {
     @OneToOne
     private Product productID;
     
-	public int getID() {
+	public long getID() {
 		return ID;
 	}
-	public void setID(int iD) {
+	public void setID(long iD) {
 		ID = iD;
 	}
 	public double getPrijs() {

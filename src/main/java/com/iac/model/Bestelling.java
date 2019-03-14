@@ -20,7 +20,7 @@ public class Bestelling {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "bestelling_id")
-    private int id;
+    private long id;
 
     private Date bestelDatum;
 
@@ -35,11 +35,11 @@ public class Bestelling {
     @OneToMany(mappedBy = "bestellingID")
     private List<Bestellingsregel> bestellingsregels = new ArrayList<>();
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

@@ -20,7 +20,7 @@ public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "categorie_id")
-    private int categorieID;
+    private long categorieID;
     private String naam, omschrijving;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
@@ -30,4 +30,36 @@ public class Categorie {
             inverseJoinColumns = {@JoinColumn(name = "product_id")}
     )
     private List<Product> producten = new ArrayList<>();
+
+	public long getCategorieID() {
+		return categorieID;
+	}
+
+	public void setCategorieID(long categorieID) {
+		this.categorieID = categorieID;
+	}
+
+	public String getNaam() {
+		return naam;
+	}
+
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+
+	public String getOmschrijving() {
+		return omschrijving;
+	}
+
+	public void setOmschrijving(String omschrijving) {
+		this.omschrijving = omschrijving;
+	}
+
+	public List<Product> getProducten() {
+		return producten;
+	}
+
+	public void setProducten(List<Product> producten) {
+		this.producten = producten;
+	}
 }
