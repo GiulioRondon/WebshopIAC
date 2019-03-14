@@ -25,7 +25,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "product_id")
     private long productID;
-
+    
     private String naam, omschrijving;
     private double prijs;
     private String afbeelding;

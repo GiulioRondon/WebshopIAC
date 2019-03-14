@@ -10,4 +10,6 @@ public interface ProductService {
     void saveProduct(Product product);
     
     List<Product> getByCategorie(long id);
+    
+    Product getByID(long id);
 }

@@ -36,10 +36,16 @@ public class ProductController {
 	}
 	
 	@GetMapping
-	@RequestMapping(value = "/{id}")
+	@RequestMapping(value = "categorie/{id}")
 	@ResponseBody
 	public ResponseEntity getProductByCategorie(@PathVariable("id") long id) {
 	    return ResponseEntity.status(200).body(productService.getByCategorie(id));
+	}
+	@GetMapping
+	@RequestMapping(value = "/{id}")
+	@ResponseBody
+	public ResponseEntity getProductByID(@PathVariable("id") long id) {
+	    return ResponseEntity.status(200).body(productService.getByID(id));
 	}
 
 	@PostMapping
