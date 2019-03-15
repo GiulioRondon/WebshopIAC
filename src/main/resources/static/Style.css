@@ -1,3 +1,7 @@
+body {
+	font-family:arial;
+}
+
 @font-face{
     font-family: 'HTOWERT';
     src: url('HTOWERT.ttf') format('truetype');
@@ -373,8 +377,9 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .productbuying h2{
-  margin-left: 630px;
-  margin-top: 30px;
+	width:50%;
+	margin-left:25%;
+	text-align:center;
 }
 
 .productsbuying table{

@@ -17,8 +17,8 @@ var id = url.searchParams.get("id");
 getProductbyId(id);
 
 function addToCart() {
-	var itemArray = Array(window.localStorage.getItem("cart_items"));
+	var itemArray = JSON.parse(window.localStorage.getItem("cart_items"));
 	itemArray.push(id);
-	window.localStorage.setItem("cart_items", itemArray)
-	console.log(itemArray);
+	window.localStorage.setItem("cart_items", JSON.stringify(itemArray));
+	location.href = 'cart.html';
 }
