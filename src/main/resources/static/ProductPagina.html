@@ -18,8 +18,7 @@
 	</div>
 
 	<div class="img-zoom-container">
-		<img id="myimage" src="one.jpeg" width="300" height="240"
-			alt="shirtone">
+		<img id="myimage" width="300" height="240" alt="shirtone">
 		<div id="myresult" class="img-zoom-result"></div>
 	</div>
 
@@ -71,7 +70,7 @@
 
 </body>
 
-
+<script src=getProductByIdFunction.js></script>
 <script>
 	function imageZoom(imgID, resultID) {
 		var img, lens, result, cx, cy;
@@ -128,7 +127,20 @@
 	}
 </script>
 <script>
-	imageZoom("myimage", "myresult");
+	img = document.getElementById("myimage");
+	var done = false;
+	img.addEventListener("mousemove", function() {
+		if (done == false) {
+			imageZoom("myimage", "myresult");
+			done = true;
+		}
+	});
+	img.addEventListener("touchmove", function() {
+		if (done == false) {
+			imageZoom("myimage", "myresult");
+			done = true;
+		}
+	});
 </script>
 <script>
 	var coll = document.getElementsByClassName("collapsible");
@@ -172,8 +184,5 @@
 			modal.style.display = "none";
 		}
 	}
-</script>
-<script src=getProductByIdFunction.js>
-	
 </script>
 </html>
