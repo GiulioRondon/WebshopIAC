@@ -16,19 +16,19 @@
 
 	</div>
 	<script>
-		function addProductToCartById(id){
+		function addProductToCartById(id,size){
 			if (id != null) {
 			fetch("/producten/" + id)
 			.then(response => response.json())
 			.then(function(json){
-					document.getElementById("cartTable").innerHTML += "<tr><td>"+json.naam+"</td></tr>"
+				document.getElementById("cartTable").innerHTML += "<tr><td><p>"+json.naam+" <font color='#adadad'>"+size+"</font></p></td></tr>";
 			})
 			}
 		}
 		
 		var items = JSON.parse(window.localStorage.getItem("cart_items"));
 		for (i = 0; i < items.length; i++)  {
-			addProductToCartById(items[i])
+			addProductToCartById(items[i][0],items[i][1]);
 		}
 		</script>
 </body>

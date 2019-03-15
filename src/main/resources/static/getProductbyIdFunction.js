@@ -17,8 +17,11 @@ var id = url.searchParams.get("id");
 getProductbyId(id);
 
 function addToCart() {
+	if(window.localStorage.getItem("cart_items") == null) {
+		window.localStorage.setItem("cart_items", JSON.stringify(Array()))
+	}
 	var itemArray = JSON.parse(window.localStorage.getItem("cart_items"));
-	itemArray.push(id);
+	itemArray.push(Array(id,document.getElementById("sizeSelect").value));
 	window.localStorage.setItem("cart_items", JSON.stringify(itemArray));
 	location.href = 'cart.html';
 }
