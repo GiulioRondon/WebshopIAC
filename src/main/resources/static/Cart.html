@@ -9,11 +9,11 @@
 <link rel="stylesheet" type="text/css" href="cart.css">
 </head>
 <body>
-	<div class="productbuying">
+	<div class="productbuying" id="cartBox">
 		<h2>Products in Cart</h2>
 		<table id="cartTable">
 		</table>
-
+		<button id="clearCartButton"onclick="clearCart()">Clear Cart</button>
 	</div>
 	<script>
 		function addProductToCartById(id,size){
@@ -23,12 +23,17 @@
 			.then(function(json){
 				document.getElementById("cartTable").innerHTML += "<tr><td><p>"+json.naam+" <font color='#adadad'>"+size+"</font></p></td></tr>";
 			})
+			document.getElementById("clearCartButton").style.display = "block";
 			}
 		}
 		
 		var items = JSON.parse(window.localStorage.getItem("cart_items"));
 		for (i = 0; i < items.length; i++)  {
 			addProductToCartById(items[i][0],items[i][1]);
+		}
+		function clearCart() {
+			window.localStorage.removeItem("cart_items");
+			location.reload();
 		}
 		</script>
 </body>
