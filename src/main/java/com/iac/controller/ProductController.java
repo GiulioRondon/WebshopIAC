@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -49,9 +50,7 @@ public class ProductController {
 	}
 
 	@PostMapping
-	public void saveProduct(@RequestBody Product product) {
-		System.out.println(product == null);
+	public void saveProduct(@ModelAttribute Product product) {
 		productService.saveProduct(product);
 	}
-
 }
