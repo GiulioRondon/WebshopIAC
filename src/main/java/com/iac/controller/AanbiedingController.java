@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,8 +34,7 @@ public class AanbiedingController {
     }
 
     @PostMapping
-    public void saveAanbieding(@RequestBody Aanbieding aanbieding){
-        System.out.println(aanbieding == null);
+    public void saveAanbieding(@ModelAttribute Aanbieding aanbieding){
         aanbiedingService.saveAanbieding(aanbieding);;
     }
 }

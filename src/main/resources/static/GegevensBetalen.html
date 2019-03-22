@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Julien Jamani</title>
+        <link rel="icon" type="image/jpg" href="logosmall.jpg">
+        <link rel="stylesheet" type="text/css" href="Style.css">
+    </head>
+    <body>
+
+            <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Congratulations! Soon you will be a proud owner of Julien Jamani clothing. You will you cool as heck!</p>
+            <div class="continuemodal">
+                <a href="Start.html"><button type="button" class="continuemodal">Cool!</button></a>
+            </div>
+          </div>
+
+        </div>
+
+    	<div class="formgegevensbetalen">
+    	<!--<form action="/action_page.php">-->
+            <form>
+    		<div class="containergegevensbetalen">
+                <label for="email"><b>Email</b></label><br>
+                  <input type="text" placeholder="Enter Email" name="email" required>
+
+    			  <label for="firstname"><b>First name</b></label><br>
+			      <input type="text" placeholder="Enter your first name" name="firstname" required>
+
+			      <label for="lastname"><b>Last name</b></label><br>
+                  <input type="text" placeholder="Enter your last name" name="firstname" required>
+
+                  <label for="Adress"><b>Adress</b></label><br>
+                  <input type="text" placeholder="Enter your adress" name="adress" required>
+
+                  <label for="city"><b>City</b></label><br>
+                  <input type="text" placeholder="Enter your city" name="city" required>
+
+                  <label for="zipcode"><b>Zip code</b></label><br>
+                  <input type="text" placeholder="Enter your zip code" name="zipcode" required>
+
+                <button type="button" class="pay" id="pay">Confirm & Check out</button>
+                
+			</form>
+    		</div>
+		</div>
+        <script>
+            // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("pay");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                  modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                  modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                  if (event.target == modal) {
+                    modal.style.display = "none";
+                  }
+                }
+        </script>
+    	
+    </body>
+</html>
