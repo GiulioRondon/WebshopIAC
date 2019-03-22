@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Account;
@@ -22,7 +24,7 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity getKlanten(){
+    public ResponseEntity getAccounts(){
         List<Account> accounts = accountService.getAllAccounts();
         if (accounts == null) {
             return ResponseEntity.status(409).build();
@@ -32,8 +34,10 @@ public class AccountController {
     }
 
     @PostMapping
-    public void saveKlant(@RequestBody Account Account){
+    @RequestMapping(value = "/accounts",method=RequestMethod.POST)
+    public void saveAccount(@ModelAttribute(value="account") Account Account){
         System.out.println(Account == null);
-        accountService.saveAccount(Account);;
+        accountService.saveAccount(Account);
+        
     }
 }
