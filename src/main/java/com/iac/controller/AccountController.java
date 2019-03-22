@@ -2,6 +2,9 @@ package com.iac.controller;
 
 import java.util.List;
 
+import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Account;
 import com.iac.service.AccountService;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
 
 @RestController
 @RequestMapping("/accounts")
@@ -34,10 +39,9 @@ public class AccountController {
     }
 
     @PostMapping
-    @RequestMapping(value = "/accounts",method=RequestMethod.POST)
-    public void saveAccount(@ModelAttribute(value="account") Account Account){
-        System.out.println(Account == null);
-        accountService.saveAccount(Account);
-        
+    @RequestMapping(value = "/create",method=RequestMethod.POST)
+    public void saveAccount(@QueryParam("email") String mail){
+    	System.out.println(mail);
+        /*accountService.saveAccount(Account);*/
     }
 }

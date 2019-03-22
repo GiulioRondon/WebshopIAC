@@ -1,5 +1,4 @@
-console.log("Hallo");
-document.getElementById("accountAanmaken").addEventListener("click",function() {
+document.getElementById("accountButton").addEventListener("click",function() {
 	console.log("Ik kom in de functie");
 		  var formData = new FormData(document.querySelector("#postAccountForm"));
 		  var encData = new URLSearchParams(formData.entries());
@@ -8,7 +7,7 @@ document.getElementById("accountAanmaken").addEventListener("click",function() {
    			  method: 'POST',
    			  body:  encData,
    			}
-   			fetch("/accounts", fetchoptions)
+   			fetch("accounts/create", fetchoptions)
    			  .then(function(response) {
    			    if (response.ok) {
    			      console.log("Account made!");
