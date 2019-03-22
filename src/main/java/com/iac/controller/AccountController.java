@@ -15,14 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Account;
+import com.iac.model.AccountRequest;
 import com.iac.service.AccountService;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
 
-@RestController
+@RestController()
 @RequestMapping("/accounts")
 public class AccountController {
-    private final AccountService accountService;
+    
+	private final AccountService accountService;
     
     public AccountController(AccountService accountService) {
     	this.accountService = accountService;
@@ -38,10 +40,15 @@ public class AccountController {
         return ResponseEntity.status(200).body(accounts);
     }
 
-    @PostMapping
-    @RequestMapping(value = "/create",method=RequestMethod.POST)
-    public void saveAccount(@QueryParam("email") String mail){
-    	System.out.println(mail);
+    @PostMapping("/create")
+    //@RequestMapping(value = "/create",method=RequestMethod.POST)
+    public void saveAccount(@RequestBody AccountRequest request /**@FormParam("email") String mail**/){
+    	Account account = new Account();
+    	account.setGebruikersnaam(request.getEmail());
+    	account.setWachtwoord(request.getPassword());
+    	
+    	// accountService.saveAccount(account);
+    	// System.out.println("hello");
         /*accountService.saveAccount(Account);*/
     }
 }

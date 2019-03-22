@@ -6,9 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.iac.controller.AanbiedingController;
 import com.iac.controller.AccountController;
-
-@SpringBootApplication(scanBasePackages={
-		"com.iac.controller", "com.iac.model","com.iac.repository","com.iac.service"})
+//@SpringBootApplication(scanBasePackages={
+//		"com.iac.controller", "com.iac.model","com.iac.repository","com.iac.service"})
+@SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
