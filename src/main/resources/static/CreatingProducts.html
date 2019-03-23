@@ -14,16 +14,19 @@
       <form>
     		<div class="containergegevensbetalen">
                   <label for="name"><b>Name</b></label><br>
-                  <input type="text" placeholder="Enter name" name="name" required>
+                  <input id="nameInput" type="text" placeholder="Enter name" name="name" required>
+                  
+                  <label for="name"><b>Description</b></label><br>
+                  <textarea id="descriptionInput" type="text" placeholder="Enter Description" name="name" required></textarea><br>
 
           			  <label for="price"><b>Price</b></label><br>
-      			      <input type="text" placeholder="Enter price" name="price" required>
+      			      <input id="priceInput" type="number" placeholder="Enter price" name="price" required>
 
       			      <label for="photo"><b>Photo</b></label><br>
-                  <input type="file" name="photo" accept="image/*" required>
+                  <input id="pictureInput" type="file" name="photo" accept="image/*" required>
 
                   <label for="category"><b>Category</b></label><br><br>
-                  <select name="clothes">
+                  <select id="categoryInput" name="clothes">
                     <option value="Shirt">Shirt</option>
                     <option value="Shoes">Shoes</option>
                     <option value="Pants">Pants</option>
@@ -31,11 +34,11 @@
                   </select>
 
 
-                <button type="button" class="continue" style="margin-top: 100px;">Create new product</button>
+                <button type="button" class="continue" id="AddProductButton" style="margin-top: 100px;">Create new product</button>
                 
 			</form>
     		</div>
 		</div>
-    	
+    	<script src="addProduct.js"></script>
     </body>
 </html>

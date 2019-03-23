@@ -7,16 +7,9 @@ function getProductbyId(id){
 		document.getElementById("ProductNaam").innerHTML = json.naam;
 		document.getElementById("ProductPrijs").innerHTML = json.prijs;
 	})
-<<<<<<< HEAD
  }
 	var url_string = window.location.href;
 	var url = new URL(url_string);
-=======
-}
- 
-var url_string = window.location.href;
-var url = new URL(url_string);
->>>>>>> 37959cec1452e66c148d23aad4e6ad0249a576ce
 
 var id = url.searchParams.get("id");
 	

@@ -1,5 +1,9 @@
 package com.iac.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -13,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iac.model.Account;
 import com.iac.model.Product;
+import com.iac.requests.AccountRequest;
+import com.iac.requests.ProductRequest;
 import com.iac.service.ProductService;
 
 @RestController
@@ -35,22 +42,29 @@ public class ProductController {
 
 		return ResponseEntity.status(200).body(producten);
 	}
-	
+
 	@GetMapping
 	@RequestMapping(value = "categorie/{id}")
 	@ResponseBody
 	public ResponseEntity getProductByCategorie(@PathVariable("id") long id) {
-	    return ResponseEntity.status(200).body(productService.getByCategorie(id));
+		return ResponseEntity.status(200).body(productService.getByCategorie(id));
 	}
+
 	@GetMapping
 	@RequestMapping(value = "/{id}")
 	@ResponseBody
 	public ResponseEntity getProductByID(@PathVariable("id") long id) {
-	    return ResponseEntity.status(200).body(productService.getByID(id));
+		return ResponseEntity.status(200).body(productService.getByID(id));
 	}
 
-	@PostMapping
-	public void saveProduct(@ModelAttribute Product product) {
+	@PostMapping("/create")
+	public void saveProduct(@RequestBody ProductRequest request) throws ParseException {
+		Product product = new Product();
+		product.setNaam(request.getNaam());
+		product.setOmschrijving(request.getBeschrijving());
+		product.setPrijs(request.getPrijs());
+		product.setAfbeelding(request.getAfbeelding());
+
 		productService.saveProduct(product);
 	}
 }

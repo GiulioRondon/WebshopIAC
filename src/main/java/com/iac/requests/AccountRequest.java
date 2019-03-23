@@ -1,4 +1,4 @@
-package com.iac.model;
+package com.iac.requests;
 
 public class AccountRequest {
 	

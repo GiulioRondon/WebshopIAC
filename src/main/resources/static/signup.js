@@ -1,11 +1,16 @@
 document.getElementById("accountButton").addEventListener("click",function() {
-	console.log("Ik kom in de functie");
-		  var formData = new FormData(document.querySelector("#postAccountForm"));
-		  var encData = new URLSearchParams(formData.entries());
+	var accountJson = {
+			"email": document.getElementById("emailForm").value,
+			"password": document.getElementById("passwordForm").value
+	};
 
-		  var fetchoptions = { 
-   			  method: 'POST',
-   			  body:  encData,
+		var fetchoptions = { 
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+   			  	body:  JSON.stringify(accountJson),
    			}
    			fetch("accounts/create", fetchoptions)
    			  .then(function(response) {

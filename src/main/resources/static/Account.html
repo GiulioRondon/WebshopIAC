@@ -14,10 +14,10 @@
     		<div class="container">
     		<p>
     			<label for="email"><b>Email</b></label><br>
-			      <input type="text" th:field="*{gebruikersnaam}" id="emailForm" placeholder="Enter Email" name="email" required>
+			      <input type="text" id="emailForm" placeholder="Enter Email" name="email" required>
 
 			      <label for="psw"><b>Password</b></label><br>
-			      <input type="password" th:field="*{wachtwoord}" id="passwordForm" placeholder="Enter Password" name="psw" required>
+			      <input type="password"  id="passwordForm" placeholder="Enter Password" name="psw" required>
 
 			      <label for="psw-repeat"><b>Repeat Password</b></label><br>
 			      <input type="password" id="passwordForm1" placeholder="Repeat Password" name="psw-repeat" required>
@@ -28,12 +28,10 @@
 
 			      <p>By creating an account you agree to our <a href="Terms.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-                <button id="accountButton"type="button" class="cancel">Cancel</button></a>
-                <<!-- input type="submit" id="accountAanmaken" class="signup"></a> -->
+                <button id="accountButton"type="button" class="cancel">Create</button></a>
+                <!-- input type="submit" id="accountAanmaken" class="signup"></a> -->
 			</form>
     		</div>
-		  
-		</div>
     	
     </body>
   <script src="signup.js"></script>
