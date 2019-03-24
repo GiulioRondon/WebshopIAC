@@ -9,9 +9,11 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Aanbieding;
@@ -40,7 +42,14 @@ public class AanbiedingController {
 
         return ResponseEntity.status(200).body(aanbiedingen);
     }
-
+    
+	@GetMapping
+	@RequestMapping(value = "byproduct/{id}")
+	@ResponseBody
+	public ResponseEntity getAanbiedingByProduct(@PathVariable("id") long id) {
+		return ResponseEntity.status(200).body(aanbiedingService.getByProduct(id));
+	}
+    
     @SuppressWarnings("resource")
 	@PostMapping("/create")
 	public void saveAanbieding(@RequestBody AanbiedingRequest request) throws ParseException {

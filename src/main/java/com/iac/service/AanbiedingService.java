@@ -8,4 +8,6 @@ public interface AanbiedingService {
 	List<Aanbieding> getAlleAanbiedingen();
 	
 	void saveAanbieding(Aanbieding aanbieding);
+	
+	Aanbieding getByProduct(long id);
 }

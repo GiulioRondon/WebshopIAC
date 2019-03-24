@@ -14,13 +14,13 @@ function readFile(file) {
         image.src = e.target.result;
         image.onload = function() {
             var canvas = document.createElement("canvas");
-            canvas.width = 200;
-            canvas.height = 100;
+            canvas.width = 400;
+            canvas.height = 200;
             var ctx = canvas.getContext("2d")
             ctx.fillStyle = "#ffffff";
-            ctx.fillRect(0, 0, 200, 100);
+            ctx.fillRect(0, 0, 400, 200);
            
-        	ctx.drawImage(image, 0, 0,200,100);
+        	ctx.drawImage(image, 0, 0,400,200);
         	var canvasIn = canvas;
 
         	var fr = new FileReader();
