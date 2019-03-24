@@ -14,9 +14,13 @@ function readFile(file) {
         image.src = e.target.result;
         image.onload = function() {
             var canvas = document.createElement("canvas");
-            canvas.width = 100;
-            canvas.height = 50;
-        	canvas.getContext("2d").drawImage(image, 0, 0,100,50);
+            canvas.width = 200;
+            canvas.height = 100;
+            var ctx = canvas.getContext("2d")
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, 200, 100);
+           
+        	ctx.drawImage(image, 0, 0,200,100);
         	var canvasIn = canvas;
 
         	var fr = new FileReader();
@@ -59,9 +63,11 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 	window.setTimeout(function() {
 	 	console.log(imageBase64);
 	 	var base64String = "";
+	 	
 	 	for (var i = 0; i < imageBase64.length ; i++) {
 	 	    base64String += imageBase64[i] + ",";
 	 	}
+	 	
 	 	base64String = base64String.slice(0, -1);
 	 	console.log(base64String);
 	 	
@@ -91,5 +97,6 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 	   			     
 	   			  })
 	   			  .catch(error => console.log(error));
+			location.href = "start.html";
 	},500);	  
 });
