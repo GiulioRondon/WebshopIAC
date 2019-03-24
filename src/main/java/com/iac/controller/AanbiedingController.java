@@ -17,14 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.iac.model.Aanbieding;
 import com.iac.requests.AanbiedingRequest;
 import com.iac.service.AanbiedingService;
+import com.iac.service.ProductService;
+import com.iac.service.ProductServiceImpl;
 
 @RestController
 @RequestMapping("/aanbiedingen")
 public class AanbiedingController {
     private final AanbiedingService aanbiedingService;
+    private final ProductService productService;
     
-    public AanbiedingController(AanbiedingService aanbiedingService) {
+    public AanbiedingController(AanbiedingService aanbiedingService, ProductService productService) {
     	this.aanbiedingService = aanbiedingService;
+    	this.productService = productService;
     }
 
     @GetMapping
@@ -41,9 +45,11 @@ public class AanbiedingController {
 	@PostMapping("/create")
 	public void saveAanbieding(@RequestBody AanbiedingRequest request) throws ParseException {
 		Aanbieding aanbieding = new Aanbieding();
+	
 		aanbieding.setPrijs(request.getPrijs());
 		aanbieding.setBeginDatum(request.getBeginDatum());
 		aanbieding.setEindDatum(request.getEindDatum());
+		aanbieding.setProductID(productService.getByID(request.getProductId()));
 
 		aanbiedingService.saveAanbieding(aanbieding);
 	}

@@ -38,17 +38,17 @@
                </form>
         		</div>
     		</div> 
-                <script>
+        <script>
    
 		function getProductId(id,size){
 			if (id != null) {
-			fetch("/producten/" + id)
-			.then(response => response.json())
-			.then(function(json){
-				document.getElementById("productID").value = json.naam;
-			})
-		}
-		var product = JSON.parse(window.localStorage.getItem("product_id"));
+				fetch("/producten/" + id)
+				.then(response => response.json())
+				.then(function(json){
+					document.getElementById("productID").value = json.naam;
+				})
+			}
+			var product = JSON.parse(window.localStorage.getItem("product_id"));
 			getProductId(product[i][0]);
 			}
 		function clearProduct() {
@@ -56,7 +56,7 @@
 			location.reload();
 		}
 		</script>
-          <script src="addSale.js"></script>     
+         <script src="addSale.js"></script>     
     	
     </body>
 </html>

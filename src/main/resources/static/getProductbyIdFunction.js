@@ -33,10 +33,9 @@ function addToCart() {
 	location.href = 'cart.html';
 }
 function createSale(){
-if(window.localStorage.getItem("product_id") == null) {
 	window.localStorage.setItem("product_id",id);
-}
-location.href = 'CreatingSales.html';
+
+	location.href = 'CreatingSales.html';
 
 }
 

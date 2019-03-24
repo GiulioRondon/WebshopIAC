@@ -37,9 +37,6 @@ public class Product {
 	public void setAfbeelding(String afbeelding) {
 		this.afbeelding = afbeelding;
 	}
-
-	@OneToMany(mappedBy= "productID")
-    private List<Aanbieding> aanbiedingen = new ArrayList<>();
     
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinTable(
@@ -79,14 +76,4 @@ public class Product {
 	public void setPrijs(double prijs) {
 		this.prijs = prijs;
 	}
-
-	public List<Aanbieding> getAanbiedingen() {
-		return aanbiedingen;
-	}
-
-	public void setAanbiedingen(List<Aanbieding> aanbiedingen) {
-		this.aanbiedingen = aanbiedingen;
-	}
-    
-    
 }
