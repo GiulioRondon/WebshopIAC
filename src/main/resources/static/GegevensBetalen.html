@@ -17,7 +17,7 @@
             <span class="close">&times;</span>
             <p>Congratulations! Soon you will be a proud owner of Julien Jamani clothing. You will you cool as heck!</p>
             <div class="continuemodal">
-                <a href="Start.html"><button type="button" class="continuemodal">Cool!</button></a>
+               <button type="button" class="continuemodal">Cool!</button></a>
             </div>
           </div>
 
@@ -28,22 +28,22 @@
             <form>
     		<div class="containergegevensbetalen">
                 <label for="email"><b>Email</b></label><br>
-                  <input type="text" placeholder="Enter Email" name="email" required>
+                  <input id="emailForm" type="text" placeholder="Enter Email" name="email" required>
 
     			  <label for="firstname"><b>First name</b></label><br>
-			      <input type="text" placeholder="Enter your first name" name="firstname" required>
+			      <input id="firstnameForm" type="text" placeholder="Enter your first name" name="firstname" required>
 
 			      <label for="lastname"><b>Last name</b></label><br>
-                  <input type="text" placeholder="Enter your last name" name="firstname" required>
+                  <input id="lastnameForm" type="text" placeholder="Enter your last name" name="firstname" required>
 
                   <label for="Adress"><b>Adress</b></label><br>
-                  <input type="text" placeholder="Enter your adress" name="adress" required>
+                  <input id="adressForm" type="text" placeholder="Enter your adress" name="adress" required>
 
                   <label for="city"><b>City</b></label><br>
-                  <input type="text" placeholder="Enter your city" name="city" required>
+                  <input id="cityForm" type="text" placeholder="Enter your city" name="city" required>
 
                   <label for="zipcode"><b>Zip code</b></label><br>
-                  <input type="text" placeholder="Enter your zip code" name="zipcode" required>
+                  <input id="zipcodeForm" type="text" placeholder="Enter your zip code" name="zipcode" required>
 
                 <button type="button" class="pay" id="pay">Confirm & Check out</button>
                 
@@ -77,6 +77,7 @@
                   }
                 }
         </script>
+        <script src="createBestelling.js"></script>
     	
     </body>
 </html>

@@ -4,9 +4,13 @@ package com.iac.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.iac.model.Bestelling;
 import com.iac.model.Klant;
+import com.iac.requests.BestellingRequest;
+import com.iac.requests.KlantRequest;
 import com.iac.service.KlantService;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -28,9 +32,14 @@ public class KlantController {
         return ResponseEntity.status(200).body(klanten);
     }
 
-    @PostMapping
-    public void saveKlant(@RequestBody Klant klant){
-        System.out.println(klant == null);
+
+    @SuppressWarnings("resource")
+	@PostMapping("/create")
+    public void saveKlant(@RequestBody KlantRequest request)throws ParseException {
+    	Klant klant = new Klant();
+    	klant.setVoornaam(request.getVoornaam());
+        klant.setAchternaam(request.getAchternaam());
+       
         klantService.saveKlant(klant);
     }
 }

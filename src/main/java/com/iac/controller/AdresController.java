@@ -1,12 +1,16 @@
 package com.iac.controller;
 
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.iac.model.Adres;
+import com.iac.model.Bestelling;
+import com.iac.requests.AdresRequest;
+import com.iac.requests.BestellingRequest;
 import com.iac.service.AdresService;
 
 @RestController
@@ -28,8 +32,17 @@ public class AdresController {
 		return ResponseEntity.status(200).body(adressen);
 	}
 	
-	@PostMapping
-	public void saveAdres(@RequestBody Adres adres) {
+
+    @SuppressWarnings("resource")
+	@PostMapping("/create")
+    public void saveAdres(@RequestBody AdresRequest request)throws ParseException {
+    	Adres adres = new Adres();
+        adres.setHuisnummer(request.getHuisnummer());
+        adres.setPostcode(request.getPostcode());
+        adres.setStraat(request.getStraat());
+        adres.setWoonplaats(request.getWoonplaats());
+        adresService.saveAdres(adres);
+    }
 
 }
-}
+
