@@ -1,11 +1,16 @@
 package com.iac.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.ResponseEntity;
@@ -66,21 +71,30 @@ public class ProductController {
 		product.setNaam(request.getNaam());
 		product.setOmschrijving(request.getBeschrijving());
 		product.setPrijs(request.getPrijs());
-		System.out.println(request.getAfbeelding());
-		try
+		System.out.println("IN SAVE");
+/*		try
         {
             //This will decode the String which is encoded by using Base64 class
-            byte[] imageByte= Base64.decodeBase64(request.getAfbeelding());
-
+            byte[] imageByte = Base64.decodeBase64(request.getAfbeelding());
+            System.out.println(request.getAfbeelding());
+            
+            ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
+            BufferedImage bImage2 = ImageIO.read(bis);
+            ImageIO.write(bImage2, "jpg", new File("output.jpg") );
+            System.out.println("image createde");
+            
             String directory="images/" + request.getNaam() + 1;
 
-            new FileOutputStream(directory).write(imageByte);
+            FileOutputStream os = new FileOutputStream(directory);
+            os.write(imageByte);
+            os.close();
         }
         catch(Exception e)
         {
-        }
+        	System.out.println(e);
+        }*/
 		
-		product.setAfbeelding("images/" + request.getNaam() +1);
+		product.setAfbeelding(request.getAfbeelding());
 
 		productService.saveProduct(product);
 	}

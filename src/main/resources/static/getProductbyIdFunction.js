@@ -1,9 +1,17 @@
+function bitToImage(data,id) {
+    var arrayBuffer = data;
+    var bytes = new Uint8Array(arrayBuffer);
+
+    var image = document.getElementById(id);
+    image.src = 'data:image/png;base64,'+encode(bytes);
+}
+
 function getProductbyId(id){
 	// product
 	fetch("/producten/" + id)
 	.then(response => response.json())
 	.then(function(json){
-		document.getElementById("myimage").src = json.afbeelding;
+		bitToImage(json.afbeelding,"myimage");
 		document.getElementById("ProductNaam").innerHTML = json.naam;
 		document.getElementById("ProductPrijs").innerHTML = json.prijs;
 	})

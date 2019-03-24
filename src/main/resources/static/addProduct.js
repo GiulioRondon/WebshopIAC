@@ -1,8 +1,8 @@
+var imageBase64;
 function readFile(file) {
-	var input = file);
+	var input = file;
 	var output = "";
-	var returnVal;
-
+	
 	if (input.files.length === 0) {
 	    return;
 	}
@@ -22,13 +22,14 @@ function readFile(file) {
         	var fr = new FileReader();
         	
         	fr.onload = function () {
-        	    var data = fr.result;
-        	    console.log(fr);
-        	    var array = new Int8Array(fr.result);
-        	    returnVal = array;
+        		console.log("result--------------------");
+        		console.log(fr.result);
+        		console.log("result--------------------");
+        	    imageBase64 = new Int8Array(fr.result);
         	};
         	var blob = dataURItoBlob(canvasIn.toDataURL('image/jpeg'));
         	fr.readAsArrayBuffer(blob);
+        	
         	}
         }
     fr1.readAsDataURL(input.files[0]);
@@ -54,32 +55,36 @@ function dataURItoBlob(dataURI) {
 }
 
 document.getElementById("AddProductButton").addEventListener("click",function() {
-	var file = document.getElementById("pictureInput").files[0];
-	var imageBase64 = dataURItoBlob(readFile(document.getElementById("pictureInput").files[0]))
+	readFile(document.getElementById("pictureInput"));
+	window.setTimeout(function() {
+	 	console.log(imageBase64);
+	 	base64String = JSON.stringify(imageBase64)
+	 	
+		var productJson = {
+				"naam": document.getElementById("nameInput").value,
+				"prijs": document.getElementById("priceInput").value,
+				"beschrijving": document.getElementById("descriptionInput").value,
+				"afbeelding": base64String
+		};
+		console.log(productJson);
+		var jsonString = JSON.stringify(productJson);
+		console.log(jsonString);
 
-	console.log(imageBase64);
-	var productJson = {
-			"naam": document.getElementById("nameInput").value,
-			"prijs": document.getElementById("priceInput").value,
-			"beschrijving": document.getElementById("descriptionInput").value,
-			"afbeelding": imageBase64
-	};
-
-/*		var fetchoptions = { 
-				method: 'POST',
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-   			  	body:  JSON.stringify(productJson),
-   			}
-   			fetch("producten/create", fetchoptions)
-   			  .then(function(response) {
-   			    if (response.ok) {
-   			      console.log("Product made!");
-   			    } else console.log("Could not make product!");
-   			     
-   			  })
-   			  .catch(error => console.log(error));*/
-		  
+			var fetchoptions = { 
+					method: 'POST',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+	   			  	body: jsonString ,
+	   			}
+	   			fetch("producten/create", fetchoptions)
+	   			  .then(function(response) {
+	   			    if (response.ok) {
+	   			      console.log("Product made!");
+	   			    } else console.log("Could not make product!");
+	   			     
+	   			  })
+	   			  .catch(error => console.log(error));
+	},500);	  
 });
