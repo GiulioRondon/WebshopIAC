@@ -15,8 +15,8 @@ function readFile(file) {
         image.onload = function() {
             var canvas = document.createElement("canvas");
             canvas.width = 100;
-            canvas.height = 100;
-        	canvas.getContext("2d").drawImage(image, 0, 0,100,100);
+            canvas.height = 50;
+        	canvas.getContext("2d").drawImage(image, 0, 0,100,50);
         	var canvasIn = canvas;
 
         	var fr = new FileReader();
@@ -25,7 +25,7 @@ function readFile(file) {
         		console.log("result--------------------");
         		console.log(fr.result);
         		console.log("result--------------------");
-        	    imageBase64 = new Int8Array(fr.result);
+        	    imageBase64 = new Int16Array(fr.result);
         	};
         	var blob = dataURItoBlob(canvasIn.toDataURL('image/jpeg'));
         	fr.readAsArrayBuffer(blob);
@@ -44,7 +44,7 @@ function dataURItoBlob(dataURI) {
 
 	  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
 
-	  var ia = new Uint8Array(byteString.length);
+	  var ia = new Uint16Array(byteString.length);
 	  for (var i = 0; i < byteString.length; i++) {
 	    ia[i] = byteString.charCodeAt(i);
 	  }
@@ -58,7 +58,12 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 	readFile(document.getElementById("pictureInput"));
 	window.setTimeout(function() {
 	 	console.log(imageBase64);
-	 	base64String = JSON.stringify(imageBase64)
+	 	var base64String = "";
+	 	for (var i = 0; i < imageBase64.length ; i++) {
+	 	    base64String += imageBase64[i] + ",";
+	 	}
+	 	base64String = base64String.slice(0, -1);
+	 	console.log(base64String);
 	 	
 		var productJson = {
 				"naam": document.getElementById("nameInput").value,
