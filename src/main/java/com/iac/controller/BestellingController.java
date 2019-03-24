@@ -1,5 +1,6 @@
 package com.iac.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Bestelling;
+import com.iac.requests.BestellingRequest;
 import com.iac.service.BestellingService;
 
 @RestController
@@ -31,9 +33,11 @@ public class BestellingController {
         return ResponseEntity.status(200).body(bestellingen);
     }
 
-    @PostMapping
-    public void saveBestelling(@RequestBody Bestelling bestelling){
-        System.out.println(bestelling == null);
+    @SuppressWarnings("resource")
+	@PostMapping("/create")
+    public void saveBestelling(@RequestBody BestellingRequest request)throws ParseException {
+    	Bestelling bestelling = new Bestelling();
+        bestelling.setBestelDatum(request.getBestelDatum());
         bestellingService.saveBestelling(bestelling);
     }
 }
