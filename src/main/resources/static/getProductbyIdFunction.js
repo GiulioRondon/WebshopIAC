@@ -1,7 +1,7 @@
 function bitToImage(data,id) {
-    var arrayBuffer = data;
-    var bytes = new Uint8Array(arrayBuffer);
+    var arrayBuffer = data.split(",");
     
+    var bytes = new Uint16Array(arrayBuffer);
     var image = document.getElementById(id);
     image.src = 'data:image/png;base64,'+encode(bytes);
 }
