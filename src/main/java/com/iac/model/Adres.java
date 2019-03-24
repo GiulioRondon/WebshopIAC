@@ -13,6 +13,7 @@ public class Adres {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String straat, huisnummer, postcode, woonplaats;
+    
 	public long getId() {
 		return id;
 	}

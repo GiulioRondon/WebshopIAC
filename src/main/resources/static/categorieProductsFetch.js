@@ -6,8 +6,8 @@ function bitToImage(data,id) {
     image.src = 'data:image/png;base64,'+encode(bytes);
 }
 
-function getProducten() {
-	fetch("/producten")
+function getProductenByCategorie(categorieId) {
+	fetch("/producten/categorie/" + categorieId)
     .then(response => response.json())
     .then(function(jsonArray) {
     		document.getElementById("products").innerHTML = "";
@@ -20,7 +20,11 @@ function getProducten() {
             }
  })
 }
-getProducten();
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var categorieId = url.searchParams.get("id");
+getProductenByCategorie(categorieId)
 
 function encode (input) {
     var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";

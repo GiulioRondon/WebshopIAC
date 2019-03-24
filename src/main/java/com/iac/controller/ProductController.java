@@ -71,28 +71,6 @@ public class ProductController {
 		product.setNaam(request.getNaam());
 		product.setOmschrijving(request.getBeschrijving());
 		product.setPrijs(request.getPrijs());
-		System.out.println("IN SAVE");
-/*		try
-        {
-            //This will decode the String which is encoded by using Base64 class
-            byte[] imageByte = Base64.decodeBase64(request.getAfbeelding());
-            System.out.println(request.getAfbeelding());
-            
-            ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
-            BufferedImage bImage2 = ImageIO.read(bis);
-            ImageIO.write(bImage2, "jpg", new File("output.jpg") );
-            System.out.println("image createde");
-            
-            String directory="images/" + request.getNaam() + 1;
-
-            FileOutputStream os = new FileOutputStream(directory);
-            os.write(imageByte);
-            os.close();
-        }
-        catch(Exception e)
-        {
-        	System.out.println(e);
-        }*/
 		
 		product.setAfbeelding(request.getAfbeelding());
 
