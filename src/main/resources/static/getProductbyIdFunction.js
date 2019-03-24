@@ -32,3 +32,10 @@ function addToCart() {
 	window.localStorage.setItem("cart_items", JSON.stringify(itemArray));
 	location.href = 'cart.html';
 }
+function createSale(){
+if(window.localStorage.getItem("product_id") == null) {
+	window.localStorage.setItem("product_id",id);
+}
+location.href = 'CreatingSales.html';
+
+}

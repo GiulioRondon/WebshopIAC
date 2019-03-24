@@ -9,22 +9,54 @@
     </head>
     <body>
 
+      <div class="navbarnoimg" id="navbarnoimg">
+        <a href="Home.html">Home</a> 
+        <a href="Account.html">Account</a> 
+        <a href="Cart.html">Cart</a> 
+        <a href="CreatingProducts.html">Creating Product</a> 
+        <a href="CreatingSales.html">Creating Sales</a>
+        <a href="FilterProducts.html">Categories</a>
+        </div>  
+
     	<div class="formgegevensbetalen">
     	<!--<form action="/action_page.php">-->
       <form>
     		<div class="containergegevensbetalen">
-                  <label for="name"><b>Name</b></label><br>
-                  <input type="text" placeholder="Enter name of the product" name="name" required>
+                  <label id="productID"><b>Product ID</b></label><br>
+                  <input type="text" value="id" name="product_id" required>
 
           			  <label for="price"><b>New price</b></label><br>
-      			      <input type="text" placeholder="Enter the new price" name="price" required>
+      			      <input id="prijsForm" type="text" placeholder="Enter the new price" name="price" required>
+      			      <label for="beginDatum"><b>Start Sale</b></label></br>
+      			      <input id="beginDatumForm" type="date" placeholder="Enter the new price" name="beginDatum" required>
+      			      <label for="eindDatum"><b>End Sale</b></label></br>
+      			      <input id="eindDatumForm" type="date" placeholder="Enter the new price" name="eindDatum" required>
 
                  
-                <button type="button" class="continue" style="margin-top: 100px;">Create Sale for product</button>
-                
-			</form>
-    		</div>
-		</div>
+                <button id="saleButton" type="button" style="margin-top: 100px;">Create Sale for product</button>
+                <button type="button" onclick=clearProduct() class="continue" style="margin-top: 100px;">Back</button>
+               </form>
+        		</div>
+    		</div> 
+                <script>
+   
+		function getProductId(id,size){
+			if (id != null) {
+			fetch("/producten/" + id)
+			.then(response => response.json())
+			.then(function(json){
+				document.getElementById("productID").value = json.naam;
+			})
+		}
+		var product = JSON.parse(window.localStorage.getItem("product_id"));
+			getProductId(product[i][0]);
+			}
+		function clearProduct() {
+			window.localStorage.removeItem("product");
+			location.reload();
+		}
+		</script>
+          <script src="addSale.js"></script>     
     	
     </body>
 </html>
