@@ -25,5 +25,6 @@ document.getElementById("saleButton").addEventListener("click",function() {
    			     
    			  })
    			  .catch(error => console.log(error));
+   	location.href = "/ProductPagina.html?id="+product;
 		  
 });

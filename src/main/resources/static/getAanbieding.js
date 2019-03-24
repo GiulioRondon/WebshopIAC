@@ -2,7 +2,7 @@ function getProductbyId(id){
 	fetch("/aanbiedingen/byproduct/" + id)
 	.then(response => response.json())
 	.then(function(json){
-		document.getElementById("ProductAanbieding").innerHTML = json.prijs;
+		document.getElementById("ProductAanbieding").innerHTML = "€" + json.prijs;
 	})
  }
 
