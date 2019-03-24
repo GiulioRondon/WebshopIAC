@@ -1,11 +1,13 @@
 package com.iac.controller;
 
+import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,13 +59,28 @@ public class ProductController {
 		return ResponseEntity.status(200).body(productService.getByID(id));
 	}
 
+	@SuppressWarnings("resource")
 	@PostMapping("/create")
 	public void saveProduct(@RequestBody ProductRequest request) throws ParseException {
 		Product product = new Product();
 		product.setNaam(request.getNaam());
 		product.setOmschrijving(request.getBeschrijving());
 		product.setPrijs(request.getPrijs());
-		product.setAfbeelding(request.getAfbeelding());
+		System.out.println(request.getAfbeelding());
+		try
+        {
+            //This will decode the String which is encoded by using Base64 class
+            byte[] imageByte= Base64.decodeBase64(request.getAfbeelding());
+
+            String directory="images/" + request.getNaam() + 1;
+
+            new FileOutputStream(directory).write(imageByte);
+        }
+        catch(Exception e)
+        {
+        }
+		
+		product.setAfbeelding("images/" + request.getNaam() +1);
 
 		productService.saveProduct(product);
 	}

@@ -552,6 +552,11 @@ input:focus {
 	text-decoration: none;
 }
 
+.navbar a:hover {
+	background-color:#b7b7b7;
+	color:white;
+}
+
 #bannerImg {
 	z-index: -1;
 	background-image: url("bannerjamani.png");
