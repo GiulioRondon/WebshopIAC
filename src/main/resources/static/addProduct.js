@@ -32,7 +32,7 @@ function readFile(file) {
         	}
         }
     fr1.readAsDataURL(input.files[0]);
-	};
+};
 
 function dataURItoBlob(dataURI) {
 	  var byteString;
