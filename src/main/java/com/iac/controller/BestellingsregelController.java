@@ -14,7 +14,7 @@ import com.iac.model.Bestelling;
 import com.iac.model.Bestellingsregel;
 import com.iac.requests.BestellingRequest;
 import com.iac.requests.BestellingsregelRequest;
-import com.iac.service.BestellingsregelService;
+import com.iac.service.interfaces.BestellingsregelService;
 
 @RestController
 @RequestMapping("/bestellingsregels")

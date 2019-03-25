@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Account;
 import com.iac.requests.AccountRequest;
-import com.iac.service.AccountService;
+import com.iac.service.interfaces.AccountService;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
 

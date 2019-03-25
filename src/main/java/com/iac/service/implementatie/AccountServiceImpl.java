@@ -1,9 +1,10 @@
-package com.iac.service;
+package com.iac.service.implementatie;
 
 import org.springframework.stereotype.Service;
 
 import com.iac.model.Account;
 import com.iac.repository.AccountRepo;
+import com.iac.service.interfaces.AccountService;
 
 import java.util.List;
 

@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Aanbieding;
 import com.iac.requests.AanbiedingRequest;
-import com.iac.service.AanbiedingService;
-import com.iac.service.ProductService;
-import com.iac.service.ProductServiceImpl;
+import com.iac.service.interfaces.AanbiedingService;
+import com.iac.service.interfaces.ProductService;
+
 
 @RestController
 @RequestMapping("/aanbiedingen")

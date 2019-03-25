@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Bestelling;
 import com.iac.requests.BestellingRequest;
-import com.iac.service.BestellingService;
+import com.iac.service.interfaces.BestellingService;
 
 @RestController
 @RequestMapping("/bestellingen")

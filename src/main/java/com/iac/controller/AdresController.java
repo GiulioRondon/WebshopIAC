@@ -11,7 +11,7 @@ import com.iac.model.Adres;
 import com.iac.model.Bestelling;
 import com.iac.requests.AdresRequest;
 import com.iac.requests.BestellingRequest;
-import com.iac.service.AdresService;
+import com.iac.service.interfaces.AdresService;
 
 @RestController
 @RequestMapping("/adressen")

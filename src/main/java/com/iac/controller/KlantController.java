@@ -8,7 +8,7 @@ import com.iac.model.Bestelling;
 import com.iac.model.Klant;
 import com.iac.requests.BestellingRequest;
 import com.iac.requests.KlantRequest;
-import com.iac.service.KlantService;
+import com.iac.service.interfaces.KlantService;
 
 import java.text.ParseException;
 import java.util.List;

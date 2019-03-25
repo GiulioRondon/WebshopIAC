@@ -1,9 +1,10 @@
-package com.iac.service;
+package com.iac.service.implementatie;
 
 import org.springframework.stereotype.Service;
 
 import com.iac.model.Adres;
 import com.iac.repository.AdresRepo;
+import com.iac.service.interfaces.AdresService;
 
 import java.util.List;
 

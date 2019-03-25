@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Adres;
 import com.iac.model.Categorie;
-import com.iac.service.CategorieService;
+import com.iac.service.interfaces.CategorieService;
 
 @RestController
 @RequestMapping("/categories")

@@ -1,4 +1,4 @@
-package com.iac.service;
+package com.iac.service.implementatie;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +15,7 @@ import com.iac.model.Categorie;
 import com.iac.model.Product;
 import com.iac.repository.AanbiedingRepo;
 import com.iac.repository.ProductRepo;
+import com.iac.service.interfaces.AanbiedingService;
 
 @Service
 public class AanbiedingServiceImpl implements AanbiedingService {

@@ -75,7 +75,8 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 				"naam": document.getElementById("nameInput").value,
 				"prijs": document.getElementById("priceInput").value,
 				"beschrijving": document.getElementById("descriptionInput").value,
-				"afbeelding": base64String
+				"afbeelding": base64String,
+				"categorie": document.getElementById("categoryInput").value
 		};
 		console.log(productJson);
 		var jsonString = JSON.stringify(productJson);
@@ -100,3 +101,19 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 			location.href = "index.html";
 	},500);	  
 });
+
+
+//fetch categories
+
+	
+function getCategories() {
+fetch("/categories")
+	.then(response => response.json())
+    .then(function(jsonArray) {
+        for (var i = 0; i < jsonArray.length; i++)
+        {
+        	document.getElementById("categoryInput").innerHTML += "<option value='"+jsonArray[i].categorieID+"'>"+jsonArray[i].naam+"</option>";
+         }
+ })
+}
+getCategories();

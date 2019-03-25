@@ -1,9 +1,10 @@
-package com.iac.service;
+package com.iac.service.implementatie;
 
 import org.springframework.stereotype.Service;
 
 import com.iac.model.Klant;
 import com.iac.repository.KlantRepo;
+import com.iac.service.interfaces.KlantService;
 
 import java.util.List;
 

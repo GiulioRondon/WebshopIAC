@@ -1,4 +1,4 @@
-package com.iac.service;
+package com.iac.service.implementatie;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.iac.model.Bestelling;
 import com.iac.repository.BestellingRepo;
+import com.iac.service.interfaces.BestellingService;
 
 @Service
 public class BestellingServiceImpl implements BestellingService{

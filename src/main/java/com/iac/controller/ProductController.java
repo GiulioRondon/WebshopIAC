@@ -28,7 +28,7 @@ import com.iac.model.Account;
 import com.iac.model.Product;
 import com.iac.requests.AccountRequest;
 import com.iac.requests.ProductRequest;
-import com.iac.service.ProductService;
+import com.iac.service.interfaces.ProductService;
 
 @RestController
 @RequestMapping("/producten")
