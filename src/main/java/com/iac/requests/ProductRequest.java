@@ -5,6 +5,7 @@ public class ProductRequest {
 	private double prijs;
 	private String beschrijving;
 	private String afbeelding;
+	private int categorieId;
 	
 	public String getAfbeelding() {
 		return afbeelding;
@@ -29,5 +30,11 @@ public class ProductRequest {
 	}
 	public void setBeschrijving(String beschrijving) {
 		this.beschrijving = beschrijving;
+	}
+	public int getCategorieId() {
+		return categorieId;
+	}
+	public void setCategorieId(int categorieId) {
+		this.categorieId = categorieId;
 	}
 }

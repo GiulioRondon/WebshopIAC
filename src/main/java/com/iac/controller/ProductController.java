@@ -28,6 +28,7 @@ import com.iac.model.Account;
 import com.iac.model.Product;
 import com.iac.requests.AccountRequest;
 import com.iac.requests.ProductRequest;
+import com.iac.service.interfaces.CategorieService;
 import com.iac.service.interfaces.ProductService;
 
 @RestController
@@ -35,9 +36,11 @@ import com.iac.service.interfaces.ProductService;
 public class ProductController {
 	private static final RequestMethod[] GET = null;
 	private final ProductService productService;
+	private final CategorieService categorieService;
 
-	public ProductController(ProductService productservice) {
+	public ProductController(ProductService productservice, CategorieService categorieService) {
 		this.productService = productservice;
+		this.categorieService = categorieService;
 	}
 
 	@GetMapping
@@ -66,13 +69,15 @@ public class ProductController {
 
 	@SuppressWarnings("resource")
 	@PostMapping("/create")
-	public void saveProduct(@RequestBody ProductRequest request) throws ParseException {
-		Product product = new Product();
+	public void saveProduct(@RequestBody Product product) throws ParseException {
+		
+/*		Product product = new Product();
 		product.setNaam(request.getNaam());
 		product.setOmschrijving(request.getBeschrijving());
 		product.setPrijs(request.getPrijs());
+
 		
-		product.setAfbeelding(request.getAfbeelding());
+		product.setAfbeelding(request.getAfbeelding());*/
 
 		productService.saveProduct(product);
 	}
