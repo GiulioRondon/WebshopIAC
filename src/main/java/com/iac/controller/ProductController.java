@@ -69,15 +69,15 @@ public class ProductController {
 
 	@SuppressWarnings("resource")
 	@PostMapping("/create")
-	public void saveProduct(@RequestBody Product product) throws ParseException {
+	public void saveProduct(@RequestBody ProductRequest request) throws ParseException {
 		
-/*		Product product = new Product();
+		Product product = new Product();
 		product.setNaam(request.getNaam());
 		product.setOmschrijving(request.getBeschrijving());
 		product.setPrijs(request.getPrijs());
-
+		product.setCategorieID(categorieService.findById(request.getCategorieId()));
 		
-		product.setAfbeelding(request.getAfbeelding());*/
+		product.setAfbeelding(request.getAfbeelding());
 
 		productService.saveProduct(product);
 	}
