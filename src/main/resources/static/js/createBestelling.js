@@ -1,13 +1,10 @@
 document.getElementById("pay").addEventListener("click",function() {
-	var today = new Date();
-	var orderJson = {
-			"email": document.getElementById("emailForm").value,
-			"voornaam":document.getElementById("firstnameForm").value,
-			"achternaam":document.getElementById("lastnameForm").value,
-			"afleveradres":document.getElementById("adressForm").value,
+	var adresJson = {
+			"straat":document.getElementById("streetForm").value,
+			"huisnummer":document.getElementById("huisnumberForm").value,
 			"woonplaats":document.getElementById("cityForm").value,
-			"postcode":document.getElementById("zipcodeForm").value
-				
+			"postcode":document.getElementById("zipcodeForm").value	
+			
 	};
 		var fetchoptions = { 
 				method: 'POST',
@@ -15,13 +12,15 @@ document.getElementById("pay").addEventListener("click",function() {
 					'Accept': 'application/json',
 					'Content-Type': 'application/json'
 				},
-   			  	body:  JSON.stringify(orderJson),
+   			  	body:  JSON.stringify(adresJson),
    			}
-   			fetch("bestellingen/create", fetchoptions)
+		  console.log(adresJson);
+   			fetch("adressen/create", fetchoptions)
    			  .then(function(response) {
    			    if (response.ok) {
-   			      console.log("Order made!");
-   			    } else console.log("Order not made!");
+   			      console.log("Adres made!");
+   			      console.log(adresJson);
+   			    } else console.log("Adres not made!");
    			     
    			  })
    			  .catch(error => console.log(error));
