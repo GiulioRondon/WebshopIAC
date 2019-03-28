@@ -71,8 +71,8 @@ public class Bestelling {
 		return bestellingsregels;
 	}
 
-	public void setBestellingsregels(List<Bestellingsregel> bestellingsregels) {
-		this.bestellingsregels = bestellingsregels;
+	public void setBestellingsregels(List<Bestellingsregel> bestellingsregel) {
+		bestellingsregels.addAll(this.bestellingsregels);
 	}
     
     

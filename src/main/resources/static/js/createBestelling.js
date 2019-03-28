@@ -28,7 +28,7 @@ document.getElementById("pay").addEventListener("click",function() {
 //		var klantJson = {
 //				"voornaam":document.getElementById("straatForm").value,
 //				"achternaam":document.getElementById("huisnummerForm").value,
-//
+
 //		};
 //			var fetchoptions = { 
 //					method: 'POST',
