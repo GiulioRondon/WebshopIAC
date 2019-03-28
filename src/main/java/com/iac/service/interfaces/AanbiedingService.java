@@ -10,4 +10,6 @@ public interface AanbiedingService {
 	void saveAanbieding(Aanbieding aanbieding);
 	
 	Aanbieding getByProduct(long id);
+	
+	void deleteByProduct(long id);
 }

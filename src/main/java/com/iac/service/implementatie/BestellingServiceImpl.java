@@ -26,4 +26,9 @@ public class BestellingServiceImpl implements BestellingService{
 		bestellingRepo.save(bestelling);
 	}
 
+	@Override
+	public void deleteBestelling(long id) {
+		bestellingRepo.delete(bestellingRepo.findById(id).get());
+	}
+
 }

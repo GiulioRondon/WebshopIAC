@@ -1,3 +1,8 @@
+var url_string = window.location.href;
+var url = new URL(url_string);
+
+var id = url.searchParams.get("id");
+
 function bitToImage(data,id) {
     var arrayBuffer = data.split(",");
     
@@ -15,12 +20,7 @@ function getProductbyId(id){
 		document.getElementById("ProductNaam").innerHTML = json.naam;
 		document.getElementById("ProductPrijs").innerHTML = json.prijs;
 	})
- }
-
-var url_string = window.location.href;
-var url = new URL(url_string);
-
-var id = url.searchParams.get("id");
+}
 	
 getProductbyId(id);
 
@@ -66,3 +66,16 @@ function encode (input) {
     }
     return output;
 }
+
+function deleteProduct() {
+	var fetchoptions = { 
+			method: 'DELETE'
+	}
+	
+fetch("/producten/" + id, fetchoptions)
+	.then(response => response.json())
+	.then(function(json){
+		location.href = '/index.html';
+	})
+}
+

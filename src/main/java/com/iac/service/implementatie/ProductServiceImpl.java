@@ -45,4 +45,9 @@ public class ProductServiceImpl implements ProductService{
 		Optional<Product> obj =  productRepo.findById(id);;
 		return obj.get();
 	}
+	
+	@Override
+	public void deleteProduct(long id) {
+		productRepo.delete(productRepo.findById(id).get());
+	}
 }

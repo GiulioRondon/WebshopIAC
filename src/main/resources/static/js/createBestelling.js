@@ -21,9 +21,9 @@ document.getElementById("pay").addEventListener("click",function() {
    			      console.log("Adres made!");
    			      console.log(adresJson);
    			    } else console.log("Adres not made!");
-   			     
    			  })
    			  .catch(error => console.log(error));
+<<<<<<< HEAD
 		 
 //		var klantJson = {
 //				"voornaam":document.getElementById("straatForm").value,
@@ -47,4 +47,6 @@ document.getElementById("pay").addEventListener("click",function() {
 //	   			  })
 //	   			  .catch(error => console.log(error));
 			 
+=======
+>>>>>>> c4cb2e5740eac3e82bfea4a04b91cb5c8221a36f
 });

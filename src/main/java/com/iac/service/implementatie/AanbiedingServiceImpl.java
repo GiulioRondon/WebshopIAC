@@ -50,4 +50,18 @@ public class AanbiedingServiceImpl implements AanbiedingService {
 		return returnObj;
 	}
 
+	@Override
+	public void deleteByProduct(long id) {
+		Aanbieding returnObj = null;
+		Optional<Product> obj =  productRepo.findById(id);
+		for (Aanbieding a : aanbiedingRepo.findAll()) {
+			if (a.getProductID() == obj.get()) {
+				returnObj = a;
+			}
+		}
+		System.out.println("IN DELETE");
+		System.out.println(returnObj.getID());
+		aanbiedingRepo.delete(returnObj);
+	}
+
 }
