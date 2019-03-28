@@ -13,7 +13,9 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +24,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iac.model.Account;
 import com.iac.model.Product;
 import com.iac.requests.AccountRequest;
 import com.iac.requests.ProductRequest;
+import com.iac.service.interfaces.AanbiedingService;
 import com.iac.service.interfaces.CategorieService;
 import com.iac.service.interfaces.ProductService;
 
@@ -37,10 +41,12 @@ public class ProductController {
 	private static final RequestMethod[] GET = null;
 	private final ProductService productService;
 	private final CategorieService categorieService;
+	private final AanbiedingService aanbiedingService;
 
-	public ProductController(ProductService productservice, CategorieService categorieService) {
+	public ProductController(ProductService productservice, CategorieService categorieService, AanbiedingService aanbiedingService) {
 		this.productService = productservice;
 		this.categorieService = categorieService;
+		this.aanbiedingService = aanbiedingService;
 	}
 
 	@GetMapping
@@ -81,4 +87,11 @@ public class ProductController {
 
 		productService.saveProduct(product);
 	}
+	
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteProduct(@PathVariable Long id) {
+    	aanbiedingService.deleteByProduct(id);
+        productService.deleteProduct(id);
+    }
 }

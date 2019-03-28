@@ -21,7 +21,6 @@ document.getElementById("pay").addEventListener("click",function() {
    			      console.log("Adres made!");
    			      console.log(adresJson);
    			    } else console.log("Adres not made!");
-   			     
    			  })
    			  .catch(error => console.log(error));
 });

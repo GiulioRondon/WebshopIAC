@@ -8,4 +8,6 @@ public interface BestellingService {
 	List<Bestelling> getAllBestellingen();
 	
 	void saveBestelling(Bestelling bestelling);
+	
+	void deleteBestelling(long id);
 }
