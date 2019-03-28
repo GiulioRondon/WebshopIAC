@@ -1,4 +1,4 @@
-package com.iac.service;
+package com.iac.service.interfaces;
 
 import java.util.List;
 
