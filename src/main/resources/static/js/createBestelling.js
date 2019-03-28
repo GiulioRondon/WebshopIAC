@@ -25,5 +25,4 @@ document.getElementById("pay").addEventListener("click",function() {
    			     
    			  })
    			  .catch(error => console.log(error));
-		  
 });
