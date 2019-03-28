@@ -76,7 +76,7 @@ document.getElementById("AddProductButton").addEventListener("click",function() 
 				"prijs": document.getElementById("priceInput").value,
 				"beschrijving": document.getElementById("descriptionInput").value,
 				"afbeelding": base64String,
-				"categorie": document.getElementById("categoryInput").value
+				"categorieId": document.getElementById("categoryInput").value
 		};
 		console.log(productJson);
 		var jsonString = JSON.stringify(productJson);

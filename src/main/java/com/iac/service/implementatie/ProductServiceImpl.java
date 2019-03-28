@@ -35,8 +35,9 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	public List<Product> getByCategorie(long id) {
-		Optional<Categorie> obj =  categorieRepo.findById(id);
-		return obj.get().getProducten();
+		/*Optional<Categorie> obj =  categorieRepo.findById(id);*/
+		/*return obj.get().getProducten();*/
+		return productRepo.findByCategorieId(id);
 	}
 	
 	@Override

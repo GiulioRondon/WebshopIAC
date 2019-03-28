@@ -8,7 +8,7 @@ body {
 
 @font-face {
 	font-family: 'HTOWERT';
-	src: url('HTOWERT.ttf') format('truetype');
+	src: url('../HTOWERT.ttf') format('truetype');
 }
 
 .welcome-section {
@@ -573,7 +573,7 @@ input:focus {
 
 #bannerImg {
 	z-index: -1;
-	background-image: url("bannerjamani.png");
+	background-image: url("/images/bannerjamani.png");
 	width: 100%;
 	height: 400px;
 	position: absolute;

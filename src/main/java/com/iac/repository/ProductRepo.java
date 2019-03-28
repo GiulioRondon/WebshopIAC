@@ -12,5 +12,6 @@ import com.iac.model.Product;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long>{
-
+	@Query(value = "select * from product where categorie_id = :categorie_id", nativeQuery = true)
+	List<Product> findByCategorieId(@Param("categorie_id") long id);
 }

@@ -21,4 +21,9 @@ public class CategorieServiceImpl implements CategorieService {
 		return categorieRepo.findAll();
 	}
 
+	@Override
+	public Categorie findById(long id) {
+		System.out.println(id);
+		return categorieRepo.findById(id).get();
+	}
 }

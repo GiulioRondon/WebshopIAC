@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,8 +27,21 @@ public class Product {
     @JoinColumn(name = "product_id")
     private long productID;
     
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    private Categorie categorieID;
+    
     private String naam, omschrijving;
-    private double prijs;
+    
+    public Categorie getCategorieID() {
+		return categorieID;
+	}
+
+	public void setCategorieID(Categorie categorieID) {
+		this.categorieID = categorieID;
+	}
+
+	private double prijs;
     private String afbeelding;
 
     public String getAfbeelding() {
@@ -37,13 +51,6 @@ public class Product {
 	public void setAfbeelding(String afbeelding) {
 		this.afbeelding = afbeelding;
 	}
-    
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "product_categories",
-            joinColumns = {@JoinColumn(name = "product_id")},
-            inverseJoinColumns = {@JoinColumn(name = "categories_id")}
-    )
 
 	public long getProductID() {
 		return productID;

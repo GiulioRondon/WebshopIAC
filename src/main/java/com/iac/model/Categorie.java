@@ -23,14 +23,6 @@ public class Categorie {
     private long categorieID;
     private String naam, omschrijving;
 
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "product_categories",
-            joinColumns = {@JoinColumn(name = "categories_id")},
-            inverseJoinColumns = {@JoinColumn(name = "product_id")}
-    )
-    private List<Product> producten = new ArrayList<>();
-
 	public long getCategorieID() {
 		return categorieID;
 	}
@@ -53,13 +45,5 @@ public class Categorie {
 
 	public void setOmschrijving(String omschrijving) {
 		this.omschrijving = omschrijving;
-	}
-
-	public List<Product> getProducten() {
-		return producten;
-	}
-
-	public void setProducten(List<Product> producten) {
-		this.producten = producten;
 	}
 }
