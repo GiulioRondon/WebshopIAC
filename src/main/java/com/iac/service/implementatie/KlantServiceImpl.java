@@ -27,5 +27,10 @@ public class KlantServiceImpl implements KlantService {
         klantRepo.save(klant);
     }
 
+	@Override
+	public Klant getByID(long id) {
+		return klantRepo.findById(id).get();
+	}
+
 
 }

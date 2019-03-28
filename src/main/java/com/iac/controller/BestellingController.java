@@ -60,7 +60,7 @@ public class BestellingController {
     public void saveBestelling(@RequestBody BestellingRequest request)throws ParseException {
     	Bestelling bestelling = new Bestelling();
     	
-    	bestelling.setAccountID(klantService.getByID(request.getKlantID()));
+    	bestelling
     	
         bestelling.setBestelDatum(request.getBestelDatum());
         bestellingService.saveBestelling(bestelling);

@@ -27,4 +27,9 @@ public class AdresServiceImpl implements AdresService {
 		adresRepo.save(adres);
 	}
 
+	@Override
+	public Adres getByID(long id) {
+		return adresRepo.findById(id).get();
+	}
+
 }
